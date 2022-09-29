@@ -10,7 +10,7 @@ class HangmanGameV2:
     
     def setup_game(self):
         self.cheat = True
-        words_list:list = ["Game", "Train", "Against"]
+        words_list:list = ["Game", "Train", "Against", "Multiple Word", "Coding", "Reason"]
         self.the_word:str = random.choice(words_list)
 
         self.game()
@@ -20,6 +20,9 @@ class HangmanGameV2:
         guesses = []
 
         for word_ch in self.the_word:
+            if word_ch == "" or word_ch == " " or word_ch == "\n":
+                guesses.append("-")
+                continue
             guesses.append("_")
 
         print("Try pick your word")
